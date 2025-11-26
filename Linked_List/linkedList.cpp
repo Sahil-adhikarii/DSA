@@ -106,11 +106,9 @@ int main(){
     l.delete_at_head();
     l.delete_at_head();
     l.delete_at_head();
-    // l.delete_at_head();
 
-    // l.delete_at_tail();    
-    // l.delete_at_tail();    
-    // l.delete_at_tail();    
+        
+
     l.delete_at_tail();    
 
     l.display();
