@@ -1,45 +1,61 @@
 #include<iostream>
 using namespace std;
 
-int x[]={1,6,9,13,20};
-int y[]={2,8,10,19,30};
-int i=0,j=0,k=0;
-
-    int sizeX = sizeof(x)/sizeof(x[0]);
-    int sizeY = sizeof(y)/sizeof(y[0]);
-    int totalSize = sizeX+sizeY;
-
-int main(){
-    // int a[3] = {4,5,6};
-   int res[totalSize];
+    void merge(int x[],int start,int mid,int end){
 
 
-    while(i<sizeX && j<sizeY){
-        if(x[i]<y[j]){
-            res[k] = x[i];
+        int i=start;
+        int j=mid+1;
+        int k=0;
+        int temp[(end-start)+1];
+
+
+        while(i<=mid && j<=end){
+        if(x[i]<x[j]){
+            temp[k] = x[i];
             i++;
         }
         else{
-            res[k] = y[j];
+            temp[k] = x[j];
             j++;
         }
         k++;
     }
     
-    while(i<sizeX){
-        res[k] = x[i];
+    while(i<=mid){
+        temp[k] = x[i];
         i++;
         k++;
         }
-    while(j<sizeY){
-      res[k] = y[j];
+    while(j<=end){
+      temp[k] = x[j];
       j++;
       k++;
     }
 
-        for(i=0;i<totalSize;i++){
-            cout<<res[i]<<endl;
+    for(i=start;i<=end;i++){
+            x[i] = temp[i-start];
         }
+
+    }
+
+
+
+
+int main(){
+
+    int x[]={1,6,9,10,5,7,8};
+
+    int start = 0;
+    int mid = 3;
+    int end = 6;
+
+    merge(x,start,mid,end);
+    
+    for(int i=0;i<=end;i++){
+            cout<<x[i]<<endl;
+        }
+        
 
     return 0;
 }
