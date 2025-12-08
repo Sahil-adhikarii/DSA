@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std;
 
-int x[]={1,2,3,4,5,6,7};
-int y[]={8,9,10,11,12,13};
+int x[]={1,6,9,13,20};
+int y[]={2,8,10,19,30};
 int i=0,j=0,k=0;
 
     int sizeX = sizeof(x)/sizeof(x[0]);
