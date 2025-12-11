@@ -39,23 +39,41 @@ using namespace std;
 
     }
 
+    void ms(int a[],int start,int end){
+
+        if(start<end){
+            int mid = (start+end)/2;
+            ms(a,start,mid);
+            ms(a,mid+1,end);
+            merge(a,start,mid,end);
+            
+        }
+
+    }
+
 
 
 
 int main(){
 
-    int x[]={1,6,9,10,5,7,8};
+    int x[]={46,3,5,8,1,34,86,90,23,12,4};
 
     int start = 0;
-    int mid = 3;
-    int end = 6;
+    int end = (sizeof(x)/sizeof(x[0]))-1;
 
-    merge(x,start,mid,end);
+    ms(x,start,end);
     
     for(int i=0;i<=end;i++){
             cout<<x[i]<<endl;
         }
+
+
+
+    
         
 
     return 0;
 }
+
+
+
