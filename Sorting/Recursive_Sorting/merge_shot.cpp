@@ -39,12 +39,12 @@ using namespace std;
 
     }
 
-    void ms(int a[],int start,int end){
+    void mergeSort(int a[],int start,int end){
 
         if(start<end){
             int mid = (start+end)/2;
-            ms(a,start,mid);
-            ms(a,mid+1,end);
+            mergeSort(a,start,mid);
+            mergeSort(a,mid+1,end);
             merge(a,start,mid,end);
             
         }
@@ -74,7 +74,7 @@ int main(){
     start = 0;
     end = (sizeof(x)/sizeof(x[0]))-1;
 
-    ms(x,start,end);
+    mergeSort(x,start,end);
     
     for(int i=0;i<=end;i++){
             cout<<x[i]<<endl;
