@@ -56,10 +56,23 @@ using namespace std;
 
 int main(){
 
-    int x[]={46,3,5,8,1,34,86,90,23,12,4};
+    int n,start,end;
+    cout<<"Enter N: ";
+    cin>>n;
+    int x[n];
 
-    int start = 0;
-    int end = (sizeof(x)/sizeof(x[0]))-1;
+    cout<<"\n\n\n"<<endl;
+    for(int i=0;i<n;i++){
+        cout<<"Enter any number: ";
+        cin>>x[i];
+        cout<<endl;
+    }
+    cout<<"\n\n\n"<<endl;
+
+        // int x[]={46,3,5,8,1,34,86,90,23,12,4};
+
+    start = 0;
+    end = (sizeof(x)/sizeof(x[0]))-1;
 
     ms(x,start,end);
     
